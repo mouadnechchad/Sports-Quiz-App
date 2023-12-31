@@ -16,6 +16,7 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportViewHol
 
     private Context context;
     private List<Sport> sports;
+    private OnItemClickListener listener;
 
     public SportAdapter(Context context, List<Sport> sports) {
         this.context = context;
@@ -35,11 +36,25 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportViewHol
 
         holder.sportImage.setImageResource(sport.getImageResourceId());
         holder.sportName.setText(sport.getName());
+
+        // Set click listener for the item
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (listener != null) {
+                    listener.onItemClick(sport);
+                }
+            }
+        });
     }
 
     @Override
     public int getItemCount() {
         return sports.size();
+    }
+
+    public void setOnItemClickListener(OnItemClickListener listener) {
+        this.listener = listener;
     }
 
     // ViewHolder class
@@ -53,4 +68,10 @@ public class SportAdapter extends RecyclerView.Adapter<SportAdapter.SportViewHol
             sportName = itemView.findViewById(R.id.sportName);
         }
     }
+
+    // Interface for item click listener
+    public interface OnItemClickListener {
+        void onItemClick(Sport sport);
+    }
 }
+

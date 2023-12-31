@@ -11,6 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="130dp"
         android:text="About Us"
+        android:textStyle="bold"
         android:textColor="#000000"
         android:textSize="24sp" />
 
@@ -20,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/aboutUsTitle"
         android:layout_marginTop="70dp"
-        android:text="Welcome to our sports quiz app! This app is designed to test your knowledge in various sports categories. Challenge yourself and have fun answering questions related to your favorite sports.\n\nOur mission is to provide an enjoyable and educational experience for sports enthusiasts. If you have any feedback or suggestions, feel free to contact us.\n\nThank you for using our app!"
+        android:text="Welcome to our sports quiz app developed by Moud NECHCHAD and Manal ELKASSIMI. This app is designed to test your knowledge in various sports categories. Challenge yourself and have fun answering questions related to your favorite sports.\n\nOur mission is to provide an enjoyable and educational experience for sports enthusiasts. If you have any feedback or suggestions, feel free to contact us.\n\nThank you for using our app!"
         android:textColor="#000000" />
 
     <LinearLayout
@@ -43,7 +44,7 @@
             android:id="@+id/contactInfoTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text=" your.email@example.com"
+            android:text="contact@sportsquizapp.com"
             android:textColor="#000000"
             android:textStyle="bold"/>
     </LinearLayout>

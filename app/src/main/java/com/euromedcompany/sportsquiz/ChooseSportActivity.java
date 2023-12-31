@@ -1,5 +1,6 @@
 package com.euromedcompany.sportsquiz;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridView;
 
@@ -34,6 +35,17 @@ public class ChooseSportActivity extends AppCompatActivity {
 
         // Set the adapter to the GridView
         recyclerView.setAdapter(adapter);
+
+        // Set click listener for RecyclerView items
+        adapter.setOnItemClickListener(new SportAdapter.OnItemClickListener() {
+            @Override
+            public void onItemClick(Sport sport) {
+                // Start QuizActivity and pass the selected sport
+                Intent intent = new Intent(ChooseSportActivity.this, QuestionActivity.class);
+                intent.putExtra("selectedSport", sport);
+                startActivity(intent);
+            }
+        });
     }
 
     private List<Sport> getSports() {
@@ -42,7 +54,7 @@ public class ChooseSportActivity extends AppCompatActivity {
         List<Sport> sports = new ArrayList<>();
         sports.add(new Sport("Football", R.drawable.football_img));
         sports.add(new Sport("Basketball", R.drawable.basketball_img));
-        sports.add(new Sport("Handball", R.drawable.handball_img));
+        sports.add(new Sport("Tennis", R.drawable.tennis_image));
         sports.add(new Sport("Volleyball", R.drawable.volleyball_img));
         sports.add(new Sport("Formula 1", R.drawable.formula1_img));
         sports.add(new Sport("Athletics", R.drawable.athletics_img));

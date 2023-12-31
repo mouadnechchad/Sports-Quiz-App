@@ -13,11 +13,17 @@
         android:theme="@style/Theme.SportsQuiz"
         tools:targetApi="31">
         <activity
+            android:name=".QuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Quetion_Acivity"
+            android:exported="false" />
+        <activity
             android:name=".AboutUsActivity"
             android:exported="false" />
         <activity
             android:name=".ChooseSportActivity"
-            android:exported="false"/>
+            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
